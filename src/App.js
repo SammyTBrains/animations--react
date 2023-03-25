@@ -8,6 +8,7 @@ import List from "./components/List/List";
 class App extends Component {
   state = {
     modalIsOpen: false,
+    showBlock: false,
   };
 
   showModal = () => {
@@ -22,6 +23,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Animations</h1>
+        <button>Toggle</button>
+        {this.state.showBlock ? <div></div> : null}
+
         <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
         <Backdrop show={this.state.modalIsOpen} />
         <button className="Button" onClick={this.showModal}>
